@@ -1,7 +1,19 @@
-import update from './update.js';
+import { FirstGameScene } from './first-scene';
+import Phaser from 'phaser';
 
-// even though Rollup is bundling all your files together, errors and
-// logs will still point to your original source modules
-console.log('if you have sourcemaps enabled in your devtools, click on main.js:5 -->');
+const config/*: Phaser.Types.Core.GameConfig*/ = {
+    width: 800,
+    height: 600,
+    type: Phaser.AUTO,
+    parent: 'game-container',
+    physics: {
+      default: 'arcade',
+      arcade: {
+        gravity: { y: 300 },
+        debug: false
+      }
+    },
+    scene: [FirstGameScene]
+  };
 
-update();
+new Phaser.Game(config);
