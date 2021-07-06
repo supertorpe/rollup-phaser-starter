@@ -15,6 +15,12 @@ export default {
 		strict: false,
 		sourcemap: true
 	},
+	watch: {
+		chokidar: {
+			paths: 'src/**',
+			usePolling: true
+		}
+	},
 	plugins: [
 		resolve({browser:true}), // tells Rollup how to find phaser in node_modules
 		commonjs({sourceMap:false}), // converts to ES modules
